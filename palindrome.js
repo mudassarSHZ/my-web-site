@@ -1,15 +1,12 @@
-function isPalindrome(str) {
-    // Convert the string to lowercase
-    str = str.toLowerCase();
-  
-    // Remove all non-alphanumeric characters
-    str = str.replace(/[^a-z0-9]/g, "");
+function isPalindrome(string) {
+    // Remove all non-alphanumeric characters and convert the string to lowercase
+    let cleanString = string.replace(/[^a-z0-9]/gi, '').toLowerCase();
   
     // Check if the string is a palindrome by comparing it to its reverse
-    return str === str.split("").reverse().join("");
+    return cleanString === cleanString.split('').reverse().join('');
   }
   
-  // Test the function
-  console.log(isPalindrome("racecar"));  // Output: true
-  console.log(isPalindrome("hello"));  // Output: false
-  
+  // Test the function with a few examples
+  console.log(isPalindrome('racecar')); // true
+  console.log(isPalindrome('hello')); // false
+  console.log(isPalindrome('A man, a plan, a canal: Panama')); // true
